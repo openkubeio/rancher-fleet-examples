@@ -1,1 +1,31 @@
 
+namespace: default
+helm:
+  chart: https://github.com/openkubeio/charts/guestbook-0.0.0.tgz
+targetCustomizations:
+- name: dev
+  helm:
+    values:
+      controller:
+        kind: DaemonSet
+        service:
+          nodePorts:
+            http: 30080
+            https: 30443
+            stat: 31024
+  clusterSelector:
+    matchLabels:
+      target: dev
+- name: qa
+  helm:
+    values:
+      controller:
+        kind: DaemonSet
+        service:
+          nodePorts:
+            http: 30080
+            https: 30443
+            stat: 31024
+  clusterSelector:
+    matchLabels:
+      env: qa
