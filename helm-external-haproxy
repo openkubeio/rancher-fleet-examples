@@ -6,19 +6,13 @@ metadata:
 spec:
   repo: https://github.com/openkubeio/rancher-fleet-examples
   paths:
-  - multi-cluster/helm-external
+  - multi-cluster/helm-external-haproxy
   targets:
   - name: dev
     clusterSelector:
       matchLabels:
-        env: dev
-
+        target: dev
   - name: test
     clusterSelector:
       matchLabels:
-        env: test
-
-  - name: prod
-    clusterSelector:
-      matchLabels:
-        env: prod
+        target: qa
