@@ -12,7 +12,7 @@ spec:
     clusterSelector:
       matchLabels:
         target: dev
-  - name: test
+  - name: qa
     clusterSelector:
       matchLabels:
         target: qa
