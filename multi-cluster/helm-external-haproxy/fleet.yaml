@@ -1,5 +1,6 @@
 helm:
   chart: https://github.com/openkubeio/rancher-fleet-examples/raw/main/charts/kubernetes-ingress-1.5.0.tgz
+  releaseName: my-release
 targetCustomizations:
 - name: dev
   helm:
